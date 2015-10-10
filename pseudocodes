@@ -1,0 +1,20 @@
+// This is pseudocode
+
+// Global variables
+var current; // Current location
+var find; // Location encoded
+
+initialize();
+
+encode();
+
+get_route();
+
+distance();
+
+communicate_w_db();
+
+save_db();
+
+import_db();
+
