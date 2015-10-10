@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<meta charset="UTF-8"> 
+<title>Project Untitled Yet</title>
+    <style type="text/css"><!---->
+      html, body { height: 100%; margin: 0; padding: 0; background-color: white; color: black; font-family: "Calibri"; }
+      #map { height: 75%; width: 70%; }
+    </style>
+</HEAD>
+<BODY>
+<div id="top">
+<h1>Welcome to (whatever_the_name_is)</h1>
+<p>
+
+</p>
+</div>
+<div id="searchmap"></div>
+    
+	 <div id="lookup">
+	 <p>Which restaurant would you like to find? Type name/address here!</p>
+	 <p>You are currently at: </p><p id="showloc" style="font-weight: bold;"></p>
+    <input id="address" type="textbox" value="Type your addres here" style="width: 65%;">
+    <input id="submit" type="button" value="Encode" onclick="codeAddress()">
+  </div>
+  <div id="map"></div>
+	 <script type="text/javascript">
+	 <!--Below API is provided by Google Inc. which holds all the rights for its property.-->
+	 var map;
+	 var geocoder;
+	 var infoWIndow;
+	 var current_address = "Cincinnati, OH, USA";
+	 
+	 function changeCurrentAddress(newaddress) {
+	   current_address = newaddress;
+	   return newaddress;
+	 }
+	 
+ function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 39.100, lng: -84.517},
+    zoom: 12
+  });
+  geocoder = new google.maps.Geocoder;
+  infoWindow = new google.maps.InfoWindow({map: map});
+  infoWindow.setPosition(map.center);
+  infoWindow.setContent(current_address);
+
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+	  
+	  showCurrentAddressMainPage(pos);
+
+
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
+}
+
+  function codeAddress() {
+    var address = document.getElementById("address").value;
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+  }
+  
+  function showCurrentAddressMainPage(latlng) {
+    // var ret;
+	geocoder.geocode({'location': latlng}, function(results, status) {
+	  var address = document.createElement('p');
+	  var address_node_str;
+	  if (status == google.maps.GeocoderStatus.OK) {
+	    changeCurrentAddress(results[0].formatted_address);
+	    address_node_str = results[1].formatted_address;
+		// console.log(address_node_str);
+	  } else {
+	    changeCurrentAddress("null");
+	    address_node_str = "Failed to obtain current address";
+		// console.log(address_node_str);
+	  }
+	  var address_node = document.createTextNode(address_node_str);
+	  address.appendChild(address_node);
+	  document.getElementById('showloc').appendChild(address).innerHTML;
+	  
+	  infoWindow.setPosition(latlng);
+      infoWindow.setContent(results[0].formatted_address);
+      map.setCenter(latlng);
+	});
+	// return ret;
+  }
+  
+    </script>
+<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPK-DIPw36sqStkdbEL1DEmHOKB8zR-70&callback=initMap">
+    </script>
+	</div>
+   
+<div id="bottom">
+<p>Copyright 2015 John Doe Smith. All rights reserved.<br>
+Google, Google Maps, Google API, etc. are properties of Google Inc.</p>
+</div>
+</BODY>
+</HTML>
