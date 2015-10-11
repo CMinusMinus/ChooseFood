@@ -2,20 +2,17 @@
     angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
     $routeProvider
-
-        // home page
+        //homepage
         .when('/home', {
-            if (user.name != '') {
                 templateUrl: 'views/home.html',
                 controller: 'MainController'
-            }
-            else {
-                templateUrl: 'views/login.html'
-                controller: 'MainController'
-            }
         })
-
-        // nerds page that will use the NerdController
+        //login
+        .when('/login', {
+                templateUrl: 'views/login.html',
+                controller: 'MainController'
+        })
+        //results
         .when('/results', {
             templateUrl: 'views/results.html',
             controller: 'ResultsController'
