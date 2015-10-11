@@ -10,7 +10,7 @@
         <p>Please input your dining preferences in the form below :) </p>
 
     <div class="center">
-      <form>
+      <form name="myform" action="find-food.html">
 
   <fieldset class="account-info-radio">
     <label>
@@ -20,6 +20,13 @@
       <input type="radio" name="isdriving" value=false>Walk
 
 
+    </label>
+  </fieldset>
+
+  <fieldset class="account-info">
+    <label>
+      Keyword<br>
+      <input type="text" name="keyword" placeholder="Keyword">
     </label>
   </fieldset>
 
@@ -52,7 +59,7 @@
   </fieldset>
 
   <fieldset class="account-action">
-    <input class="btn" type="submit" name="submit" value="Go! Go! Go!!!">
+    <input class="btn" type="submit" name="submit" value="Go! Go! Go!!!"><a href="javascript: submit()"></a>
   </fieldset>
 </form>
       </div>

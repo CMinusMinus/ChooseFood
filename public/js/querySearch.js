@@ -24,4 +24,6 @@ function changePriceLevel() {
 
 function changeWaitTime();
 
-function submit();
+function submit() {
+  document.forms["myform"].submit();
+}
