@@ -4,7 +4,7 @@
     $routeProvider
 
         // home page
-        .when('/', {
+        .when('/home', {
             if (user.name != '') {
                 templateUrl: 'views/home.html',
                 controller: 'MainController'
