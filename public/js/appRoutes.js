@@ -6,8 +6,8 @@
         // home page
         .when('/', {
             if () {
-            templateUrl: 'views/home.html',
-            controller: 'MainController'
+                templateUrl: 'views/home.html',
+                controller: 'MainController'
             }
             else {
                 templateUrl: 'views/login.html'
