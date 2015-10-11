@@ -4,6 +4,7 @@
     $routeProvider
         //homepage
         .when('/home', {
+                console.log("I got here");
                 templateUrl: 'views/home.html',
                 controller: 'MainController'
         })

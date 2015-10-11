@@ -1,2 +1,7 @@
-// public/js/app.js
-angular.module('ChooseFood', ['ngRoute', 'appRoutes', 'MainCtrl', 'NerdCtrl', 'NerdService']);
+var app = angular.module('ChooseFood', [])
+    .controller('Files', function($scope, $http, $rootScope) {
+
+    })
+    .directive('fileUpload', function () {
+
+    });
