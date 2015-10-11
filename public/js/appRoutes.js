@@ -5,7 +5,7 @@
 
         // home page
         .when('/', {
-            if () {
+            if (user.name != '') {
             templateUrl: 'views/home.html',
             controller: 'MainController'
             }
