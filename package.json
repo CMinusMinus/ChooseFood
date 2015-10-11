@@ -1,10 +1,14 @@
 {
-  "name": "starter-node-angular",
+  "name": "ChooseFood",
   "main": "server.js",
+  "description": "App to find restaurants",
+  "repository": "https://github.com/CMinusMinus/ChooseFood.git",
   "dependencies": {
-    "express": "~4.5.1",
-    "mongoose": "~3.8.35",
-    "body-parser": "~1.4.2",
-    "method-override": "~2.0.2"
+    "express": "",
+    "mongoose": "",
+    "body-parser": "",
+    "method-override": "",
+    "morgan": "",
+    "serve-static": ""
   }
 }
