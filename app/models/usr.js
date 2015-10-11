@@ -3,11 +3,14 @@ var mongoose = require('mongoose');
 module.exports = mongoose.model('Usr', {
     name: {
         type: String,
-        default: ''
-    }
+        default: 'Anonymous'
+    },
     
     location: {
-        type: String,
-        required: true
+        type: String
+    },
+                                
+    _id: {
+        type: Number
     }
 });

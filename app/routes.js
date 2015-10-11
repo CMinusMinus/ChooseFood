@@ -1,8 +1,13 @@
 var Restaurant = require('./models/restaurant');
+var usr = require('./models/usr');
 
 module.exports = function(app) {
     app.get('/', function(req,res) {
         res.sendfile("./public/views/login.html");
+    });
+    
+    app.get('/newuser', function(req,res) {
+        
     });
     
     app.get('/home', function(req,res) {
@@ -14,7 +19,7 @@ module.exports = function(app) {
     });
     
     app.get('/results', function(req,res) {
-        res.sendfile("./public/views/results");
+        res.sendfile("./public/views/results.html");
     });
    
 };
