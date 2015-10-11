@@ -1,4 +1,2 @@
-
-function search() {
-    ("This will navigate you to another page.");
-}
+// public/js/app.js
+angular.module('ChooseFood', ['ngRoute', 'appRoutes', 'MainCtrl', 'NerdCtrl', 'NerdService']);
