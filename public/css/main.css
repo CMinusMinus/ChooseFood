@@ -14,12 +14,14 @@ p {
 
 form {
   text-align: center;
+  align-content: center;
   border: 2px solid #8f0000;
   border-radius: 5px;
-  font: 24px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 20px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow: hidden;
   width: 350px;
 }
+
 fieldset {
   border: 0;
   margin: 0;
@@ -39,6 +41,7 @@ input {
   font-weight: bold;
   margin-bottom: 20px;
 }
+
 .account-info input {
   background: #fff;
   border: 1px solid #000;
@@ -48,6 +51,16 @@ input {
   margin-top: 6px;
   width: 100%;
 }
+
+.account-info-radio input {
+  background: #fff;
+  border: 1px solid #000;
+  color: #636466;
+  padding: 6px;
+  margin-top: 6px;
+  width: 0%;
+}
+
 .account-action {
   background: #f0f0f2;
   border-top: 1px solid #c6c7cc;
@@ -62,6 +75,7 @@ input {
   float: left;
   padding: 8px 16px;
 }
+
 .account-action label {
   color: #7c7c80;
   font-size: 12px;
@@ -71,5 +85,9 @@ input {
 
 
 .center {
-    margin: auto;
+  margin: 0 auto;
+  width: 200px;
+  background: #fff;
+  padding: 0px;
+  color: #000;
 }

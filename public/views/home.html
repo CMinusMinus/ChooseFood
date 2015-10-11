@@ -1,15 +1,17 @@
 <html>
     <head>
         <title>Choose Food</title>
-        <link href="main.css" rel="stylesheet" type="text/css">
+        <link href="../css/main.css" rel="stylesheet" type="text/css">
         <script href="querySearch.js" type="text/javascript"></script>
     </head>
     <body ng-app="ChooseFood" ng-controller="MainController">
-        <h1>Hello, <span>{{ user.name }}</span>!</h1>
+        <h1>Hello, {{ user.name }}!</h1>
         <p>Please input your dining preferences in the form below :) </p>
+
+    <div class="center">
       <form>
 
-  <fieldset class="account-info">
+  <fieldset class="account-info-radio">
     <label>
       Travel Method <br>
       <input type="radio" name="isdriving" value=true checked> Drive
@@ -18,7 +20,6 @@
 
     </label>
   </fieldset>
-     <br>
 
    <fieldset class="account-info">
     <label>
@@ -27,7 +28,6 @@
 
     </label>
   </fieldset>
-        <br><br>
 
   <fieldset class="account-info">
     <label>
@@ -36,11 +36,11 @@
     <option value=1 selected>$</option>
     <option value=2>$$</option>
     <option value=3>$$$</option>
-      <option value=4>$$$$</option>
+    <option value=4>$$$$</option>
   </select>
     </label>
   </fieldset>
-        <br><br>
+
 
     <fieldset class="account-info">
     <label>
@@ -53,6 +53,7 @@
     <input class="btn" type="submit" name="submit" value="Go! Go! Go!!!">
   </fieldset>
 </form>
+      </div>
 
     </body>
 </html>
