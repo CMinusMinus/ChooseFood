@@ -6,9 +6,6 @@ module.exports = function(app) {
         res.sendfile("./public/views/login.html");
     });
     
-    app.get('/newuser', function(req,res) {
-        
-    });
     
     app.get('/home', function(req,res) {
         res.sendfile("./public/views/home.html");
