@@ -5,14 +5,14 @@
 }
 
 body {
-   background-image: url("C:\Users\e955798\Desktop\images.jpg");  /*obviously this won't work for anyone else*/
+   /*background-image: url("C:\Users\e955798\My Pictures\images.jpg") repeat;  /*obviously this won't work for anyone else*/
    background-color: #ffeeee;
 }
 
-img {
+/*img {
    opacity: .2;
    filter: alpha(opacity=20);
-}
+}*/
 
 h1 {
   text-align: center;
