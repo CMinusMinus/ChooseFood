@@ -4,6 +4,12 @@
    box-sizing: border-box;
 }
 
+body {
+   background-image: url("C:\Users\e955798\Desktop\images.jpg");  /*obviously this won't work for anyone else*/
+   opacity: .5;
+   background-color: #ffeeee;
+}
+
 h1 {
   text-align: center;
 }
@@ -27,6 +33,7 @@ fieldset {
   margin: 0;
   padding: 0;
 }
+
 input {
   border-radius: 5px;
   font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
