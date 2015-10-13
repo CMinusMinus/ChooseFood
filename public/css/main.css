@@ -6,8 +6,12 @@
 
 body {
    background-image: url("C:\Users\e955798\Desktop\images.jpg");  /*obviously this won't work for anyone else*/
-   opacity: .5;
    background-color: #ffeeee;
+}
+
+img {
+   opacity: .2;
+   filter: alpha(opacity=20);
 }
 
 h1 {
